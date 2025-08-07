@@ -1,2 +1,2 @@
 # redirect-page
-Google play/App store redirect based on mobile device
+Redirect based on mobile device
