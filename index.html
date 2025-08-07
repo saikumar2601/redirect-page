@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      text-align: center;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .fallback {
+      display: none;
+    }
+    .btn {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      text-decoration: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      var redirected = false;
+
+      if (/android/i.test(userAgent)) {
+        window.location.replace("market://details?id=com.servicenow.public.genpacthub.fulfiller");
+        redirected = true;
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.replace("https://apps.apple.com/in/app/genpact-hub/id6446353751");
+        redirected = true;
+      }
+
+      if (!redirected) {
+        document.querySelector('.fallback').style.display = 'block';
+      }
+    });
+  </script>
+  <noscript>
+    <style>.fallback { display: block; }</style>
+  </noscript>
+</head>
+<body>
+  <div class="fallback">
+    <h1>Get the App</h1>
+    <p>If you are not redirected automatically, use the buttons below:</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.servicenow.public.genpacthub.fulfiller" target="_blank">Google Play Store</a>
+    <a class="btn" href="https://apps.apple.com/in/app/genpact-hub/id6446353751" target="_blank">Apple App Store</a>
+  </div>
+</body>
+</html>
